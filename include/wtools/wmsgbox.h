@@ -18,6 +18,7 @@ typedef const w_astr_2_t w_castr_2_t;
 void w_msgbox_alert(w_castr_t text, w_castr_t title, w_castr_t button);
 w_clicked_t w_msgbox_confirm(w_castr_t text, w_castr_t title, w_castr_2_t btns);
 void w_msgbox_prompt(w_castr_t text, w_castr_t title, w_astr_t out, size_t size);
-void w_msgbox_prompt_ex(w_castr_t text, w_castr_t title, w_castr_t def, w_castr_2_t btns, w_astr_t out, size_t size);
+void w_msgbox_prompt_ex(w_castr_t text, w_castr_t title, w_castr_t def,
+                        w_castr_2_t btns, w_astr_t out, size_t size);
 
 #endif // WTOOLS_WMSGBOX_H

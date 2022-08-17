@@ -15,7 +15,7 @@ JNIEXPORT jintArray JNICALL Java_me_adasdead_WTools_wMouse__1getPosition
     int array[2] = { pos.x, pos.y };
 
     jintArray jarr = (*env)->NewIntArray(env, 2);
-    (*env)->SetIntArrayRegion(env, jarr, 0, 2, array);
+    (*env)->SetIntArrayRegion(env, jarr, 0, 2, (const jint*) array);
 
     return jarr;
 }

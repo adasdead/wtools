@@ -3,6 +3,6 @@
 
 #include "wcore.h"
 
-w_result_t w_notifications_notify(w_astr_t message, w_astr_t title);
+w_result_t w_notifications_notify(w_castr_t message, w_castr_t title);
 
 #endif // WTOOLS_WNOTIFICATIONS_H

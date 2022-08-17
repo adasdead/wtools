@@ -27,8 +27,10 @@ JNIEXPORT jint JNICALL Java_me_adasdead_WTools_wMessageBox_rawConfirm
         strncpy(btns[0], _btn1, W_MSGBOX_BUTTON_TEXT_SIZE);
         strncpy(btns[1], _btn2, W_MSGBOX_BUTTON_TEXT_SIZE);
 
-        w_msgbox_confirm(_text, _title, btns);
+        return w_msgbox_confirm(_text, _title, btns);
     }
+
+    return W_ERR;
 }
 
 JNIEXPORT jstring JNICALL Java_me_adasdead_WTools_wMessageBox_rawPrompt

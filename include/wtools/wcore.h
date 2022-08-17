@@ -5,7 +5,7 @@
 #define W_ERR                           -1
 
 typedef char *w_astr_t;
-typedef const w_astr_t w_castr_t;
+typedef const char *w_castr_t;
 typedef short w_result_t;
 
 #if _MSC_VER
@@ -74,24 +74,24 @@ static void w_ascii_to_utf16le(w_wstr_t dest,
 {
     if (!src || !dest || !size) return;
 
-    MultiByteToWideChar(CP_UTF8, 0, src, -1,
-                        dest, (int) size);
+    MultiByteToWideChar(CP_UTF8, 0, src, -1, dest, (int) size);
 }
 
-static void w_utf16le_to_ascii(w_castr_t dest,
+static void w_utf16le_to_ascii(w_astr_t dest,
                                w_wstr_t src,
                                size_t size)
 {
     if (!src || !dest || !size) return;
 
     WideCharToMultiByte(CP_UTF8, 0, src, -1,
-                        dest, (int) size,
-                        NULL, NULL);
+                        dest, (int) size, NULL, NULL);
 }
 
-#elif
-#   define W_WIN32_MAIN_VOID(main_func)
-#   define W_WIN32_MAIN_ARGS(main_func)
+#else
+
+#define W_WIN32_MAIN_VOID(main_func)
+#define W_WIN32_MAIN_ARGS(main_func)
+
 #endif // _WIN32
 
 #endif // WTOOLS_WCORE_H
