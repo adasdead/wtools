@@ -24,6 +24,32 @@ if (COMPILE_JAVA_SOURCES)
 
 endif()
 
+if (UNIX)
+
+    find_package(X11 REQUIRED)
+
+    find_package(PkgConfig REQUIRED)
+    pkg_check_modules(GTK3 REQUIRED gtk+-3.0)
+
+    target_sources(WTools PRIVATE
+        linux/wnotifications.c
+        linux/wterminal.c
+        linux/wsystem.c
+        linux/wmsgbox.c
+        linux/wmouse.c
+    )
+
+    target_include_directories(WTools PRIVATE
+        ${GTK3_INCLUDE_DIRS}
+    )
+
+    target_link_libraries(WTools PRIVATE
+        ${GTK3_LIBRARIES}
+        X11::X11
+    )
+
+endif()
+
 if (WIN32)
 
     target_sources(WTools PRIVATE

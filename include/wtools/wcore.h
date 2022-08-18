@@ -1,6 +1,8 @@
 #ifndef WTOOLS_WCORE_H
 #define WTOOLS_WCORE_H
 
+#include <stdlib.h>
+
 #define W_OK                            0
 #define W_ERR                           -1
 
@@ -88,6 +90,8 @@ static void w_utf16le_to_ascii(w_astr_t dest,
 }
 
 #else
+
+#define W_APPLICATION_ID "lib.wtools"
 
 #define W_WIN32_MAIN_VOID(main_func)
 #define W_WIN32_MAIN_ARGS(main_func)

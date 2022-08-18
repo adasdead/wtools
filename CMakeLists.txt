@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.10)
 project(WTools VERSION 1.1)
 
-option(COMPILE_JAVA_SOURCES "Compile Java Sources" ON)
+option(COMPILE_JAVA_SOURCES "Compile Java Sources" OFF)
 option(COMPILE_EXAMPLE "Compile Example" ON)
 
 set(PROJECT_INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
